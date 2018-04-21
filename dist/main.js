@@ -78,7 +78,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\nexports.push([module.i, \"@import url(https://fonts.googleapis.com/css?family=Oswald|Roboto);\", \"\"]);\n\n// module\nexports.push([module.i, \"body{\\r\\n  margin: 0;\\r\\n  padding: 0;\\r\\n}\\r\\n\\r\\nh1{\\r\\n  font: normal 36px/1.2 'Oswald', sans-serif;\\r\\n}\\r\\n\\r\\np{\\r\\n  font: normal 14px/1.4 'Roboto', sans-serif;\\r\\n  color: gray;\\r\\n}\\r\\n\\r\\nheader{\\r\\n  background: linear-gradient(135deg, #898596, #1f1531);\\r\\n}\\r\\n\\r\\nmain{\\r\\n  max-width: 1000px;\\r\\n  margin: auto;\\r\\n}\\r\\n\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./src/main.css?./node_modules/css-loader");
+eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\nexports.push([module.i, \"@import url(https://fonts.googleapis.com/css?family=Oswald|Roboto);\", \"\"]);\n\n// module\nexports.push([module.i, \"*{\\r\\n  box-sizing: border-box;\\r\\n}\\r\\n\\r\\nhtml{\\r\\n  overflow-x: hidden;\\r\\n}\\r\\n\\r\\nbody{\\r\\n  margin: 0;\\r\\n  padding: 0;\\r\\n  font: normal 14px/1.4 'Roboto', sans-serif;\\r\\n  background: linear-gradient(135deg, #a59595, #211731);\\r\\n}\\r\\n\\r\\nh1{\\r\\n  font: normal 30px/1.2 'Oswald', sans-serif;\\r\\n  margin: 0;\\r\\n  padding: 24px 0;\\r\\n}\\r\\n\\r\\np{\\r\\n  text-align: justify;\\r\\n  color: gray;\\r\\n}\\r\\n\\r\\na{\\r\\n  color: #efe8df;\\r\\n  text-align: right;\\r\\n  text-decoration: none;\\r\\n  padding: 6px;\\r\\n  flex: 1 1 100px;\\r\\n  white-space: nowrap;\\r\\n}\\r\\n\\r\\nheader{\\r\\n  max-width: 1000px;\\r\\n  display: flex;\\r\\n  justify-content: center;\\r\\n  align-items: flex-end;\\r\\n  margin: auto;\\r\\n  padding: 24px;\\r\\n}\\r\\n\\r\\nheader .logo{\\r\\n  width: 200px;\\r\\n}\\r\\n\\r\\nheader nav{\\r\\n  flex: 1;\\r\\n  text-align: right;\\r\\n}\\r\\n\\r\\nmain{\\r\\n  position: relative;\\r\\n  max-width: 1000px;\\r\\n  margin: auto;\\r\\n  padding: 24px;\\r\\n}\\r\\n\\r\\nmain::before{\\r\\n  content: \\\"\\\";\\r\\n  position: absolute;\\r\\n  width: 100vw;\\r\\n  height: 100%;\\r\\n  top: 0;\\r\\n  left: calc(-50vw + 50%);\\r\\n  background: white;\\r\\n  box-shadow: 0 -8px 8px -8px black;\\r\\n  z-index: -1;\\r\\n}\\r\\n\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./src/main.css?./node_modules/css-loader");
 
 /***/ }),
 
@@ -123,7 +123,18 @@ eval("\n/**\n * When source maps are enabled, `style-loader` uses a link element
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main.css */ \"./src/main.css\");\n/* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_main_css__WEBPACK_IMPORTED_MODULE_0__);\n\r\n\r\nfunction headerParallax() {\r\n  var header = document.createElement('header');\r\n  header.textContent = 'Dis my header'\r\n  return header;\r\n}\r\n\r\ndocument.body.appendChild(headerParallax());\r\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main.css */ \"./src/main.css\");\n/* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_main_css__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _logo_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./logo.svg */ \"./src/logo.svg\");\n/* harmony import */ var _logo_svg__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_logo_svg__WEBPACK_IMPORTED_MODULE_1__);\n\r\n\r\n\r\nfunction headerParallax() {\r\n  const header = document.createElement('header')\r\n  const logo = document.createElement('img')\r\n  const nav = document.createElement('nav')\r\n  const links = ['#p1', '#p2', '#p3', '#p4']\r\n\r\n  logo.className = 'logo'\r\n  logo.src = _logo_svg__WEBPACK_IMPORTED_MODULE_1___default.a\r\n  header.appendChild(logo)\r\n\r\n  links.forEach((href, i) => {\r\n    const link = document.createElement('a')\r\n    link.href = href\r\n    link.textContent = `NAV LINK ${i+1}`\r\n    nav.appendChild(link)\r\n  })\r\n  header.appendChild(nav)\r\n\r\n  return header\r\n}\r\n\r\ndocument.body.insertAdjacentElement('afterbegin', headerParallax())\r\n\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/logo.svg":
+/*!**********************!*\
+  !*** ./src/logo.svg ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"c8aa7199b35b4cfac5dabce0331e2cb9.svg\";\n\n//# sourceURL=webpack:///./src/logo.svg?");
 
 /***/ }),
 
