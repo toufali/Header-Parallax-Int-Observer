@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald|Roboto');
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+h1{
+  font: normal 36px/1.2 'Oswald', sans-serif;
+}
+
+p{
+  font: normal 14px/1.4 'Roboto', sans-serif;
+  color: gray;
+}
+
+header{
+  background: linear-gradient(135deg, #898596, #1f1531);
+}
+
+main{
+  max-width: 1000px;
+  margin: auto;
+}
