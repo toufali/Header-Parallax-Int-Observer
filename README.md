@@ -1,4 +1,4 @@
-# Header parallax using using CSS Perspective
+# Header parallax using Intersection Observer
 
 ### Demo
 https://handsomemedia.github.io/Header-Parallax-Int-Observer/dist/
