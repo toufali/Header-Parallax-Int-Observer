@@ -1,5 +1,4 @@
 import './main.css'
-import './logo.svg'
 
 const header = document.querySelector('header')
 const sentinel = document.createElement('span')
