@@ -34,13 +34,13 @@ header{
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  height: 100px;
+  height: 180px;
   display: flex;
   align-items: flex-end;
 }
 
 header::before{
-  background: linear-gradient(135deg, #6f9e9a, #020919);
+  background: linear-gradient(15deg, #b9adad, #6f413b, #33001c);
 }
 
 header nav{
@@ -56,6 +56,10 @@ main{
 main::before{
   background: white;
   box-shadow: 0 -8px 8px -8px black;
+}
+
+main img{
+  width: 100%;
 }
 
 h1{
