@@ -6,31 +6,14 @@
   padding: 0;
 }
 
-html, body{
-  height: 100%;
-  overflow: hidden;
-}
-
-body{
-  perspective: 1px;
-  perspective-origin: top;
-  overflow-y: auto;
-  scroll-behavior: smooth;
+html{
   font: normal 14px/1.4 'Roboto', sans-serif;
-}
-
-body::after{
-  /* nasty Edge hack for parallax: https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/5084491/ */
-  content: "";
-  position: fixed;
-  width: 1px;
-  height: 1px;
-  z-index: 1;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 header,
 main{
-  position: relative;
   max-width: 1000px;
   margin: auto;
   padding: 24px;
@@ -38,31 +21,26 @@ main{
 
 header::before,
 main::before{
-  /* full width bg within limited width container */
   content: "";
   position: absolute;
   width: 100vw;
   height: 100%;
   top: 0;
   left: calc(-50vw + 50%);
+  z-index: -1;
 }
 
 header{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 100px;
   display: flex;
-  justify-content: center;
   align-items: flex-end;
-  transform: translateZ(-1px) scale(2);
-  transform-origin: top;
-  z-index: -1;
 }
 
 header::before{
-  background: linear-gradient(135deg, #a59595, #211731);
-  z-index: -1;
-}
-
-header .logo{
-  width: 200px;
+  background: linear-gradient(135deg, #6f9e9a, #020919);
 }
 
 header nav{
@@ -70,10 +48,14 @@ header nav{
   text-align: right;
 }
 
+main{
+  position: relative;
+  z-index: 1;
+}
+
 main::before{
   background: white;
   box-shadow: 0 -8px 8px -8px black;
-  z-index: -1;
 }
 
 h1{
@@ -84,6 +66,7 @@ h1{
 p{
   text-align: justify;
   color: gray;
+  margin: 12px 0;
 }
 
 a{

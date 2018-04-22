@@ -1,25 +1,25 @@
 import './main.css'
-import HandsomeLogo from './logo.svg'
+import './logo.svg'
 
-function headerParallax() {
-  const header = document.createElement('header')
-  const logo = document.createElement('img')
-  const nav = document.createElement('nav')
-  const links = ['#p1', '#p2', '#p3', '#p4']
+const header = document.querySelector('header')
+const sentinel = document.createElement('span')
 
-  logo.className = 'logo'
-  logo.src = HandsomeLogo
-  header.appendChild(logo)
-
-  links.forEach((href, i) => {
-    const link = document.createElement('a')
-    link.href = href
-    link.textContent = `NAV LINK ${i+1}`
-    nav.appendChild(link)
-  })
-  header.appendChild(nav)
-
-  return header
+const intOpts = {
+  threshold: ((arr, i) => {
+    while (i--) {
+      arr[i] = i / 100
+    }
+    return arr
+  })([], 100)
 }
 
-document.body.insertAdjacentElement('afterbegin', headerParallax())
+const render = function(){
+  header.style.transform = `translateY(${-window.scrollY * .5}px)`
+}
+
+const intObs = new IntersectionObserver(render, intOpts);
+
+sentinel.className = 'sentinel'
+sentinel.style = `position: absolute; top: 0; width: 1px; height: ${header.clientHeight}px`
+document.body.appendChild(sentinel)
+intObs.observe(sentinel);

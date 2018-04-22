@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   "mode": process.env.NODE_ENV === "production" ? "production" : "development",
@@ -14,18 +15,23 @@ module.exports = {
    rules: [
      {
        test: /\.css$/,
-       use: [
-         'style-loader',
-         'css-loader'
-       ]
+       use: ['style-loader', 'css-loader']
      },
      {
        test: /\.(png|svg|jpg|gif)$/,
-       use: [
-         'file-loader'
-       ]
+       use: ['file-loader']
+     },
+     {
+       test: /\.html$/,
+       use: ['html-loader']
      }
 
    ]
-  }
+ },
+ plugins: [
+  new HtmlWebpackPlugin({
+    title: 'Header Parallax with Intersection Observer',
+    template: 'src/index.html'
+  })
+]
 };
