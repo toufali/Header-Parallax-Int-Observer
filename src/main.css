@@ -40,7 +40,8 @@ header{
 }
 
 header::before{
-  background: linear-gradient(15deg, #b9adad, #6f413b, #33001c);
+  background: url(bg2.jpg), linear-gradient(15deg, #cab7b7, #6f413b, #2f001a);
+  background-blend-mode: overlay;
 }
 
 header nav{
