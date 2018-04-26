@@ -9,8 +9,9 @@ const render = function(){
 
 const thresholdArr = function(num){
   const arr = []
+  const levels = num
   while (num--) {
-    arr[num] = num / 100
+    arr[num] = num / levels
   }
   return arr
 }
